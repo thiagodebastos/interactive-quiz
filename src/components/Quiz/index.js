@@ -1,18 +1,17 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
-import Quiz from './presenter';
+import * as actions from '../../redux/actions';
+import Quiz from './Quiz';
 
 function mapStateToProps(state) {
   const quiz = state.quiz;
-  return {
-    quiz
-  };
+  return { quiz };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onQuizProgress: bindActionCreators(actions.nextQuestion, dispatch)
+    onSubmitAnswer: bindActionCreators(actions.submitAnswer, dispatch),
+    onIncrementProgress: bindActionCreators(actions.incrementProgress, dispatch)
   };
 }
 

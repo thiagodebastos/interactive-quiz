@@ -8,7 +8,6 @@ const App = () =>
     {Routes}
     <footer>
       <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
       <Link to="/quiz">Quiz</Link>
     </footer>
   </div>;

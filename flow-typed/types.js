@@ -1,20 +1,31 @@
 // @flow
 
+export type Option = {
+  +id: number,
+  +text: string
+};
+
 export type Question = {
-  text: string,
-  id: number
+  +id: number,
+  +question: string,
+  +correctOption: number,
+  +complete: Boolean,
+  +options: Array<Option>
 };
 
 export type QuizItem = {
-  question: Question,
-  options: Array<string>,
-  correctOption: number,
-  image: string,
-  currentQuestion: Question.id,
-  complete: boolean
+  +question: Option,
+  +options: Array<Option>,
+  +correctOption: number,
+  +image: string,
+  +currentQuestion: Question.id,
+  +complete: boolean
 };
 
-declare type QuizActionType = 'NEXT_QUESTION' | 'INCREMENT_SCORE';
+declare type QuizActionType =
+  | 'INCREMENT_PROGRESS'
+  | 'INCREMENT_SCORE'
+  | 'SUBMIT_ANSWER';
 
 declare type QuizActionT<A: QuizActionType, P> = {|
   type: A,
@@ -22,5 +33,5 @@ declare type QuizActionT<A: QuizActionType, P> = {|
 |};
 
 export type QuizAction =
-  | QuizActionT<'NEXT_QUESTION', null>
+  | QuizActionT<'INCREMENT_PROGRESS', null>
   | QuizActionT<'INCREMENT_SCORE', null>;
