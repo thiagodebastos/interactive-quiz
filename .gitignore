@@ -11,6 +11,7 @@
 
 # misc
 .idea
+/.vscode/chrome
 .DS_Store
 .env
 .env.local
