@@ -1,6 +1,7 @@
 // @flow
 /* eslint-disable */
 import React from 'react';
+import OptionButton from '../OptionButton';
 
 type Props = {
   progress: number,
@@ -26,9 +27,14 @@ const QuizItem = (props: Props) => {
       </div>
       <div>
         {props.question.options.map((option, index) =>
-          <button key={index} onClick={() => handleClick(index)}>
+          <OptionButton
+            key={index}
+            answerSubmitted={props.answerSubmitted}
+            isCorrect={option.correct}
+            onClick={() => handleClick(index)}
+          >
             {option.text}
-          </button>
+          </OptionButton>
         )}
       </div>
     </div>

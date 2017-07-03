@@ -62,7 +62,10 @@ const Quiz = (props: Props) => {
           />}
 
       {progress + 1 === totalQuestions
-        ? <button onClick={e => onQuizComplete(e)} disabled={!answerSubmitted}>
+        ? <button
+            onClick={e => onQuizComplete(e)}
+            disabled={!answerSubmitted || quizCompleted}
+          >
             Complete
           </button>
         : <button onClick={e => onQuizProgress(e)} disabled={!answerSubmitted}>
