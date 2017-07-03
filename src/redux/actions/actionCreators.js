@@ -30,30 +30,30 @@ export function resetQuiz() {
   };
 }
 
-// export function gaCorrect(questionID) {
-//   return {
-//     type: types.GA_CORRECT,
-//     questionID
-//   };
-// }
+export function gaCorrect(questionID) {
+  return {
+    type: types.GA_CORRECT,
+    questionID
+  };
+}
 
-// export function gaIncorrect(questionID) {
-//   return {
-//     type: types.GA_CORRECT,
-//     questionID
-//   };
-// }
+export function gaIncorrect(questionID) {
+  return {
+    type: types.GA_INCORRECT,
+    questionID
+  };
+}
 
-// export function gaNextQuestion(progress) {
-//   return {
-//     type: types.GA_NEXT_QUESTION,
-//     progress
-//   };
-// }
+export function gaNextQuestion(progress) {
+  return {
+    type: types.GA_NEXT_QUESTION,
+    progress
+  };
+}
 
-// export function gaResults(results) {
-//   return {
-//     type: types.GA_RESULTS,
-//     results
-//   };
-// }
+export function gaResults(results) {
+  return {
+    type: types.GA_RESULTS,
+    results
+  };
+}
