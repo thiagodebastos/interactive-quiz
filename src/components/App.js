@@ -4,7 +4,6 @@ import Routes from '../routes';
 
 const App = () =>
   <div>
-    <h1>Header</h1>
     {Routes}
     <footer>
       <Link to="/">Home</Link>

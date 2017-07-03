@@ -1,10 +1,14 @@
 import * as types from './types';
 
 export function submitAnswer(optionID) {
-  console.info('submitAnswer', optionID);
   return {
     type: types.SUBMIT_ANSWER,
     optionID
+  };
+}
+export function submitQuiz() {
+  return {
+    type: types.SUBMIT_QUIZ
   };
 }
 
@@ -17,6 +21,12 @@ export function incrementScore() {
 export function incrementProgress() {
   return {
     type: types.INCREMENT_PROGRESS
+  };
+}
+
+export function resetQuiz() {
+  return {
+    type: types.RESET_QUIZ
   };
 }
 

@@ -4,21 +4,25 @@ import React from 'react';
 
 type Props = {
   progress: number,
+  totalQuestions: number,
+  answerSubmitted: boolean,
   question: Object,
   options: Array<string>,
   onSubmit: any
 };
 
-const QuizSection = (props: Props) => {
+const QuizItem = (props: Props) => {
   const handleClick = optionID => props.onSubmit(optionID);
 
   return (
     <div>
       <header>
-        Question {props.progress + 1}
+        Question {props.progress + 1} of {props.totalQuestions}
       </header>
       <div>
-        <img src="http://placehold.it/400x200" alt="" />
+        {props.answerSubmitted
+          ? <img src="http://placehold.it/400x200&text=revealed" alt="" />
+          : <img src="http://placehold.it/400x200&text=masked" alt="" />}
       </div>
       <div>
         {props.question.options.map((option, index) =>
@@ -31,4 +35,4 @@ const QuizSection = (props: Props) => {
   );
 };
 
-export default QuizSection;
+export default QuizItem;
