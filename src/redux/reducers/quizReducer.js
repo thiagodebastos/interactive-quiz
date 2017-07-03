@@ -1,6 +1,6 @@
 // @flow
 import { combineReducers } from 'redux';
-import * as types from '../actions/types';
+import * as types from '../actions/actionTypes';
 import questions from './questions.json';
 
 type Option = {|

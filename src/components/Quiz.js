@@ -33,11 +33,15 @@ const Quiz = (props: Props) => {
   };
 
   const handleSubmit = optionID => {
+    // if an answer has not already been submitted
     if (!props.quiz.quizApp.answerSubmitted) {
+      // check if the submitted answer is correct
       if (props.quiz.getQuestions[progress].options[optionID].correct) {
+        // dispatch incrementScore
         props.onIncrementScore();
       }
-      props.onSubmitAnswer(optionID);
+      // dispatch submitAnswer
+      props.onSubmitAnswer();
     }
   };
 
@@ -47,18 +51,18 @@ const Quiz = (props: Props) => {
 
   return (
     <div>
-      {!quizCompleted
-        ? <QuizItem
+      {quizCompleted
+        ? <Results
+            totalQuestions={totalQuestions}
+            score={score}
+            onClick={handleQuizReset}
+          />
+        : <QuizItem
             onSubmit={handleSubmit}
             answerSubmitted={answerSubmitted}
             progress={progress}
             totalQuestions={totalQuestions}
             question={getQuestions[progress]}
-          />
-        : <Results
-            totalQuestions={totalQuestions}
-            score={score}
-            onClick={handleQuizReset}
           />}
 
       {progress + 1 === totalQuestions

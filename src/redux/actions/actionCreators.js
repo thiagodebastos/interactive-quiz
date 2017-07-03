@@ -1,9 +1,8 @@
-import * as types from './types';
+import * as types from './actionTypes';
 
-export function submitAnswer(optionID) {
+export function submitAnswer() {
   return {
-    type: types.SUBMIT_ANSWER,
-    optionID
+    type: types.SUBMIT_ANSWER
   };
 }
 export function submitQuiz() {

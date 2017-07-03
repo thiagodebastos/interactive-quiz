@@ -1,4 +1,4 @@
-import * as types from '../actions/types';
+import * as types from '../actions/actionTypes';
 
 export function gaTracking(state = {}, action) {
   switch (action.type) {
